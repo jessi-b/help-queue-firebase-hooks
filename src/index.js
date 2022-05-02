@@ -8,14 +8,14 @@ import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
-import firebase from "./firebase";
+import firebase from 'firebase/compat/app';
+
 
 const store = createStore(rootReducer);
-
 const rrfProps = {
   firebase,
   config: {
-        userProfile: "users" // data on users will be stored in a collection called "users"
+      userProfile: "users" // data on users will be stored in a collection called "users"
     },
   dispatch: store.dispatch,
   createFirestoreInstance
