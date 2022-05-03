@@ -110,8 +110,6 @@ class TicketControl extends React.Component {
         currentlyVisibleState = <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList}  />;
         buttonText = "Return to Ticket List";
       } else {
-        // currentlyVisibleState = <TicketList ticketList={this.props.mainTicketList} onTicketSelection={this.handleChangingSelectedTicket} />;
-        // buttonText = "Add Ticket";
         currentlyVisibleState = <TicketList onTicketSelection={this.handleChangingSelectedTicket} />;
         buttonText = "Add Ticket";
       }
@@ -126,13 +124,11 @@ class TicketControl extends React.Component {
 }
 
 TicketControl.propTypes = {
-  mainTicketList: PropTypes.object,
   formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    // mainTicketList: state.mainTicketList,
     formVisibleOnPage: state.formVisibleOnPage
   }
 }
